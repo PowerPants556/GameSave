@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class GameConn : MonoBehaviour
 {
@@ -34,7 +35,7 @@ public class GameConn : MonoBehaviour
     public void SwitchPause()
     {
         pausePanel.SetActive(!pausePanel.activeSelf);
-        gamePanel.SetPanel(!gamePanel.activeSelf);
+        gamePanel.SetActive(!gamePanel.activeSelf);
 
         switch (Time.timeScale)
         {

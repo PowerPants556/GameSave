@@ -115,6 +115,7 @@ public class SnakeConn : MonoBehaviour
         if(Input.touchCount > 0 || Input.GetKeyDown(KeyCode.Space))
         {
             move = Vector2.up;
+            gameController.startText.color = Color.clear;
         }
         if(food == null)
         {
