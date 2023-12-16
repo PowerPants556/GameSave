@@ -31,6 +31,23 @@ public class SnakeConn : MonoBehaviour
         uBoarderPos = GameObject.Find("WallU").transform.position;
         dBoarderPos = GameObject.Find("WallD").transform.position;
         InvokeRepeating("Movement", 0.1f,stepRate);
+        SpawnFood();
+        Renderer renderer = GetComponent<Renderer>();
+        switch (MenuConn.colorNum)
+        {
+            case 1:
+                renderer.material.color = Color.white;
+                break;
+            case 2:
+                renderer.material.color = Color.yellow;
+                break;
+            case 3:
+                renderer.material.color = new Color(0f, 1f, 0.52f);
+                break;
+            default:
+                renderer.material.color = Color.white;
+                break;
+        }
     }
 
     private void SpawnFood()
@@ -154,4 +171,5 @@ public class SnakeConn : MonoBehaviour
             Restart();
         }
     }
+    
 }

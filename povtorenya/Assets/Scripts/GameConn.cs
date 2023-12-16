@@ -24,6 +24,12 @@ public class GameConn : MonoBehaviour
     private void Update()
     {
         scoreText.text = "Score: " + score.ToString();
+        if (score > MenuConn.bestScore)
+        {
+            MenuConn.bestScore = score;
+            PlayerPrefs.SetInt("BestScore", MenuConn.bestScore);
+        }
+        bestScore.text = "Best Score: " + MenuConn.bestScore.ToString();
     }
 
     private void BackToManu()
